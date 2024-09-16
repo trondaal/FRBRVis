@@ -1,0 +1,101 @@
+
+<!-- saved from url=(0057)http://dijon.idi.ntnu.no/exist/rest/db/frbrvis/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>FRBRVis</title>
+        <link type="text/css" rel="stylesheet" href="./FRBRVis_files/mainstyle.css">
+        <script type="text/javascript" src="./FRBRVis_files/d3.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/d3.layout.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/circlepack.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/sunburst.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/radial.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/hierarchy.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/little.women.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/little.women.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/little.women.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/millennium.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/millennium.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/millennium.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/don.quixote.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/don.quixote.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/don.quixote.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/henning.mankell.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/henning.mankell.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/henning.mankell.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/svetlana.makarovic.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/svetlana.makarovic.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/svetlana.makarovic.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workBABAR.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workBABAR.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workBABAR.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workDestinyOfTheRebublic.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workDestinyOfTheRebublic.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workDestinyOfTheRebublic.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workSteveJobs.wem.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workSteveJobs.ww.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/workSteveJobs.wa.js"></script>
+        <script type="text/javascript" src="./FRBRVis_files/frbrvis.js"></script>
+    </head>
+    <body onload="init()">
+        <div id="wrap">
+            <div class="title">
+     		FrbrVis  <span class="subtitle"> :: visualizing FRBR data</span>
+                <div class="line"></div>
+                <div class="examples" id="examples">
+        	work family: 
+             <select id="selectexample" name="examples" onchange="setExample(this.value)">
+                        <option value="littlewomen">Little Women</option>
+                        <option value="millennium">Millennium</option>
+                        <option value="donquixote">Don Quixote</option>
+                        <option value="svetlanamakarovic">Sapramiška </option>
+                        <option value="destiny">Destiny of the Republic </option>
+                        <option value="babar">Babar </option>
+                        <option value="stevejobs">Steve Jobs</option><!--<option value="henningmankell">Henning Mankell</option>--></select>
+                </div>
+            </div>
+            <div class="head" id="orgworktitle"><span class="headingAuthor"><span class="headingAuthor">Alcott, Louisa May</span><span class="headingOrgTitle">Little women</span><span class="headingForm">Novel</span><span class="headingGenre">young adult fiction</span></span></div>
+            <div class="subhead">
+                <div class="topmenuitem" id="wa" onclick="setDisplayType(this)">
+        works by/about the author
+      </div>
+                <div class="topmenuitem" id="ww" onclick="setDisplayType(this)">
+        related works
+     </div>
+                <div class="topmenuitem" id="we" onclick="setDisplayType(this)" style="color: rgb(5, 33, 97); cursor: default; border-bottom-style: none; opacity: 1; background: rgb(255, 255, 255);">
+        		versions
+   		  </div>
+            </div>
+            <div class="menu" id="menu"><!-- <input type="radio" name="visualization" value="hierarchy" id="hierarchy" 
+	      onchange="setVisualization(this)" checked>
+	      Spustni seznam
+	      <label for="hierarchy"></label><br>
+	      
+	      <input type="radio" name="visualization" value="radial" id="radial" 
+	        onchange="setVisualization(this)">
+	        <label for="radial">Drevo</label>
+            <br>
+            <input type="radio" name="visualization" value="sunburst" id="sunburst" 
+	          onchange="setVisualization(this)">
+	          <label for="sunburst">Koncentrični krogi</label>
+	          <br>
+	          <input name="visualization" type="radio"id="circlepack" 
+	            onchange="setVisualization(this)" value="circlepack">
+	            <label for="circlepack">Krožna hierarhija</label> 
+                
+             -->
+                <div id="hierarchy" onclick="setVisualization(this)"></div>
+                <div id="radial" onclick="setVisualization(this)"></div>
+                <div id="sunburst" onclick="setVisualization(this)"></div>
+                <div id="circlepack" onclick="setVisualization(this)"></div>
+            </div>
+            <div id="graphic" style="align:center"><svg width="700" height="650"><g transform="translate(100,30)"><path class="link" d="M0,0C50,0 50,20 100,20"></path><g class="node" transform="translate(0,0)" style="opacity: 1;"><rect y="-10" height="20" width="420" class="Work"></rect><text class="label" dy="3.5" dx="5.5">Little women</text></g><g class="node" transform="translate(100,20)" style="opacity: 1;"><rect y="-10" height="20" width="420" class="Category"></rect><text class="label" dy="3.5" dx="5.5">English (+)</text></g></g></svg></div>
+            <div id="right">
+                <div id="rightpath"></div>
+                <div id="rightlist"></div>
+            </div>
+            <div class="foot">
+    		Copyright 2011 <a href="http://idi.ntnu.no/">Trond Aalberg, Tanja Mercun</a>
+            </div>
+        </div>
+    
+</body></html>
